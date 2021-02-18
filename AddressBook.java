@@ -23,7 +23,7 @@ public class AddressBook {
 		
 		int index=0;
 		boolean isPresent=false;
-		System.out.print("Enter person name do you want to edit : ");
+		System.out.print("Enter person name do you want to delete : ");
 		String tempFirstName=sc.next();
 		for(int i = 0; i < contact.size(); i++) {
 			if(contact.get(i).getFirstName().equals(tempFirstName)) {
@@ -32,30 +32,14 @@ public class AddressBook {
 				break;		
 			}
 		}
-
 		if(isPresent) {
-			System.out.println("First Name : ");
-			contact.get(index).setFirstName(sc.next());
-			System.out.println("Last Name : ");
-			contact.get(index).setLastName(sc.next());
-			System.out.println("Address : ");
-			contact.get(index).setAddress(sc.next());
-			System.out.println("City Name : ");
-			contact.get(index).setCity(sc.next());
-			System.out.println("State Name : ");
-			contact.get(index).setState(sc.next());
-			System.out.println("Zip code : ");
-			contact.get(index).setZip(sc.next());
-			System.out.println("Phone Number: ");
-			contact.get(index).setPhoneNumber(sc.next());
-			System.out.println("E-mail id : ");
-			contact.get(index).setEmail(sc.next());
-			System.out.println("You have successfully edited contact.");
+			contact.remove(contact.get(index));
+			System.out.println("You have successfully deleted contact.");
 		}
 		else {
 			System.out.println("Invalid Name");
 		}	
-		System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");	
 	}
 }
 
