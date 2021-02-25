@@ -1,6 +1,7 @@
 package com.blbz;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -9,18 +10,50 @@ public class AddressBook {
 	public static final int  editExistingContact = 3;
 	public static final int  deletePersonContact = 4;
 	public static final int  exit  				 = 5;
-
-	public static void main(String[] args) {
+	
+	public static void welcomeToAB() {
+		HashMap<String, ArrayList<Contact>> hm = new HashMap<String, ArrayList<Contact>>();
+		
+		System.out.println("Enter number of Address Book:");
 		Scanner sc = new Scanner(System.in);
-
+		int numberOfAddressBook = sc.nextInt();
+		ArrayList<String> names = new ArrayList<String>();
+		System.out.println("Enter names of Address Book:");
+		String namesOfAddressBook= sc.nextLine();
+		
+		for(int i = 0;i<numberOfAddressBook;i++)
+			names.add(sc.nextLine());
+			
+		for(int i = 0;i<numberOfAddressBook;i++)
+		{
+			System.out.println("Enter Contact in " + names.get(i));
+			System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+			hm.put(names.get(i),AddressBook.goToAddressBook());
+		}
+			
+		
+		boolean newFlag = true;
+		
+		while(newFlag) {
+			System.out.println("Enter AddressBook names : ");
+			System.out.println("First  book is ");
+			String firstBook = sc.nextLine();
+			System.out.println( firstBook + " "+ hm.get(firstBook));
+			System.out.println("Second  book is ");
+			String secondBook = sc.nextLine();
+			System.out.println(secondBook + " "+ hm.get(secondBook));
+			newFlag = false;
+		}	
+		System.out.println("Total address books are " + hm);	
+	}
+	
+	public static ArrayList<Contact> goToAddressBook() {
+		Scanner sc = new Scanner(System.in);
 		Contact dMart = new Contact("Pushpak","Ghatode","Kailash Nagar","Pune","Maharashtra","400001","384792876","abc@gmail.com");
 		ArrayList<Contact> contact = new ArrayList<Contact>();
-		contact.add(dMart);
-
-		System.out.println("-----------------------------------------------------------Welcome to Address Book Manangement System--------------------------------------------------------\n");
-
+	
 		boolean flag = true;
-
+		
 		while(flag) 
 		{
 			System.out.println("1 : Showing Contact");
@@ -127,14 +160,22 @@ public class AddressBook {
 				System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
 				break;
 			}
-			case exit:{
-				System.out.println("-------------------------------------------Thank you for using address book management system.--------------------------------------------------------------");
-				System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");					
+			case exit:{				
 				flag = false;
 				break;
 			}
-		  }
-	   }	
+			}
+		}
+		return contact;
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("-----------------------------------------------------------Welcome to Address Book Manangement System--------------------------------------------------------\n");
+		welcomeToAB();
+		System.out.println();
+		System.out.println("-------------------------------------------Thank you for using address book management system.--------------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");
 	}
 }
 
