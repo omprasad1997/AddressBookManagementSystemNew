@@ -11,7 +11,7 @@ public class AddressBook {
 	public static final int  deletePersonContact = 4;
 	public static final int  exit  				 = 5;
 	
-	public static void welcomeToAB() {
+	public static void welcomeToAddressBook() {
 		HashMap<String, ArrayList<Contact>> hm = new HashMap<String, ArrayList<Contact>>();
 		
 		System.out.println("Enter number of Address Book:");
@@ -31,7 +31,6 @@ public class AddressBook {
 			hm.put(names.get(i),AddressBook.goToAddressBook());
 		}
 			
-		
 		boolean newFlag = true;
 		
 		while(newFlag) {
@@ -172,7 +171,7 @@ public class AddressBook {
 	public static void main(String[] args) {
 		
 		System.out.println("-----------------------------------------------------------Welcome to Address Book Manangement System--------------------------------------------------------\n");
-		welcomeToAB();
+		welcomeToAddressBook();
 		System.out.println();
 		System.out.println("-------------------------------------------Thank you for using address book management system.--------------------------------------------------------------");
 		System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------");
