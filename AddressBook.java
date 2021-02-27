@@ -59,7 +59,6 @@ public class AddressBook {
 					System.out.println(eachAddressbook.getKey() + " : " + eachAddressbook.getValue());
 				}
 			}
-
 			case exitFromAddressBook:{
 				check = false;
 				break;
