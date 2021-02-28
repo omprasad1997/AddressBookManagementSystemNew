@@ -90,7 +90,8 @@ public class AddressBook {
 							{
 							case showContact:
 							{
-								System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%n","First Name","Last Name","Address","City","State","Zip","Phone Number","E-mail");
+								System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%n","First Name","Last Name",
+																"Address","City","State","Zip","Phone Number","E-mail");
 								for(int i=0;i<hm.get(givenAddressbook.getKey()).size();i++){
 									hm.get(givenAddressbook.getKey()).get(i).showDetails();					
 								}
@@ -116,7 +117,9 @@ public class AddressBook {
 								details.add(sc.next());
 								System.out.println("E-mail id : ");
 								details.add(sc.next());
-								Contact input=new Contact(details.get(0),details.get(1),details.get(2),details.get(3),details.get(4),details.get(5),details.get(6),details.get(7));
+								Contact input=new Contact(details.get(0),details.get(1),
+															details.get(2),details.get(3),details.get(4),details.get(5),
+															details.get(6),details.get(7));
 
 								boolean isMatch=false;
 								for(Map.Entry<String,ArrayList<Contact>> eachAddressBook:hm.entrySet()) {
