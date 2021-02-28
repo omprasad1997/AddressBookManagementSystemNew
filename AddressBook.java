@@ -8,16 +8,16 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class AddressBook {
-	public static final int 	 addNewAddressBook  	      =   1;
-	public static final int 	 showNamesOfAddressBook 	  =   2;
-	public static final int		 enterContactInAddressBook    =   3;	
-	public static final int		 searchPersonByCityOrState	  =   4;
-	public static final int		 exitFromAddressBook          =   5;
-	public static final String   showContact 	              = "a";
-	public static final String   addNewContact                = "b";
-	public static final String   editExistingContact          = "c";
-	public static final String   deletePersonContact          = "d";
-	public static final String   exit 						  = "e";
+	public static final int 	 addNewAddressBook  	   =   1;
+	public static final int 	 showNamesOfAddressBook    =   2;
+	public static final int		 enterContactInAddressBook =   3;	
+	public static final int		 searchPersonByCityOrState =   4;
+	public static final int		 exitFromAddressBook       =   5;
+	public static final String   showContact 	           = "a";
+	public static final String   addNewContact             = "b";
+	public static final String   editExistingContact       = "c";
+	public static final String   deletePersonContact       = "d";
+	public static final String   exit 					   = "e";
 
 	public static void welcomeToAddressBook() {
 		Map<String, ArrayList<Contact>> hm = new HashMap<String, ArrayList<Contact>>();
