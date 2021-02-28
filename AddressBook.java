@@ -11,8 +11,7 @@ public class AddressBook {
 	public static final int 	 addNewAddressBook  	   =   1;
 	public static final int 	 showNamesOfAddressBook    =   2;
 	public static final int		 enterContactInAddressBook =   3;	
-	public static final int		 searchPersonByCityOrState =   4;
-	public static final int		 exitFromAddressBook       =   5;
+	public static final int		 exitFromAddressBook       =   4;
 	public static final String   showContact 	           = "a";
 	public static final String   addNewContact             = "b";
 	public static final String   editExistingContact       = "c";
@@ -30,9 +29,8 @@ public class AddressBook {
 
 			System.out.println("1 : Add new address book");
 			System.out.println("2 : Show names of address book");
-			System.out.println("3 : Enter contact in address book");
-			System.out.println("4 : Search person by city or state");
-			System.out.println("5 : Exit from address book");
+			System.out.println("3 : Enter contact in address book");			
+			System.out.println("4 : Exit from address book");
 			System.out.println("Enter choice :");
 			int choiceForAddressBook = sc.nextInt();
 
@@ -152,43 +150,7 @@ public class AddressBook {
 					}
 				}
 				break;
-			}
-			case searchPersonByCityOrState:{
-				System.out.println("1 : Search person by city name");
-				System.out.println("2 : Search person by state name");
-				System.out.println("Enter choice : ");
-				int choice = sc.nextInt();
-				switch(choice)
-				{
-				case 1:{
-					System.out.println("Enter city name : ");
-					String cityName = sc.next();
-
-					for(Map.Entry<String,ArrayList<Contact>> eachAddressBook:hm.entrySet()) {
-						for(int index=0;index<eachAddressBook.getValue().size();index++) {
-							if(eachAddressBook.getValue().get(index).getCity().equals(cityName)) {
-								System.out.println(eachAddressBook.getKey() + " : " + eachAddressBook.getValue().get(index).getFirstName());							
-							}
-						}				
-					}
-					break;
-				}
-				case 2:{
-					System.out.println("Enter state name : ");
-					String stateName = sc.next();
-
-					for(Map.Entry<String,ArrayList<Contact>> eachAddressBook:hm.entrySet()) {
-						for(int index=0;index<eachAddressBook.getValue().size();index++) {
-							if(eachAddressBook.getValue().get(index).getState().equals(stateName)) {
-								System.out.println(eachAddressBook.getKey() + " : " + eachAddressBook.getValue().get(index).getFirstName());							
-							}
-						}				
-					}
-					break;
-				}
-				}
-				break;
-			}
+			}			
 			case exitFromAddressBook:{
 				check = false;
 				break;
