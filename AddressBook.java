@@ -12,7 +12,8 @@ public class AddressBook {
 	public static final int 	 showNamesOfAddressBook    =   2;
 	public static final int		 enterContactInAddressBook =   3;
 	public static final int		 searchPersonByCityOrState =   4;
-	public static final int		 exitFromAddressBook       =   5;
+	public static final int		 countByCityOrState 	   =   5;
+	public static final int		 exitFromAddressBook       =   6;
 	public static final String   showContact 	           = "a";
 	public static final String   addNewContact             = "b";
 	public static final String   editExistingContact       = "c";
@@ -31,7 +32,8 @@ public class AddressBook {
 			System.out.println("2 : Show names of address book");
 			System.out.println("3 : Enter contact in address book");		
 			System.out.println("4 : Search person by city or state");
-			System.out.println("4 : Exit from address book");
+			System.out.println("5 : Get no.of contact person count by city or state");
+			System.out.println("6 : Exit from address book");
 			System.out.println("Enter choice :");
 			int choiceForAddressBook = sc.nextInt();
 
@@ -186,6 +188,46 @@ public class AddressBook {
 							}
 						}				
 					}
+					break;
+				}
+				}
+				break;
+			}
+			case countByCityOrState:{
+				System.out.println("1 : Countact of person count by city name");
+				System.out.println("2 : Countact of person count by state name");
+				System.out.println("Enter choice : ");
+				int choice = sc.nextInt();
+				switch(choice)
+				{
+				case 1:{
+					System.out.println("Enter city name : ");
+					String cityName = sc.next();
+					int countOfCity = 0;
+					
+					for(Map.Entry<String,ArrayList<Contact>> eachAddressBook:hm.entrySet()) {
+						for(int index=0;index<eachAddressBook.getValue().size();index++) {
+							if(eachAddressBook.getValue().get(index).getCity().equals(cityName)) {
+								countOfCity++;						
+							}
+						}				
+					}
+					System.out.println("Countact of person count by city name : " + countOfCity);
+					break;
+				}
+				case 2:{
+					System.out.println("Enter state name : ");
+					String stateName = sc.next();
+					int countOfstate = 0;
+
+					for(Map.Entry<String,ArrayList<Contact>> eachAddressBook:hm.entrySet()) {
+						for(int index=0;index<eachAddressBook.getValue().size();index++) {
+							if(eachAddressBook.getValue().get(index).getState().equals(stateName)) {
+								countOfstate++;							
+							}
+						}				
+					}
+					System.out.println("Countact of person count by city name : " + countOfstate);
 					break;
 				}
 				}
