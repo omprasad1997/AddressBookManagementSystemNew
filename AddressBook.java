@@ -27,7 +27,6 @@ public class AddressBook {
 		boolean check = true;
 		while(check)
 		{		
-
 			System.out.println("1 : Add new address book");
 			System.out.println("2 : Show names of address book");
 			System.out.println("3 : Enter contact in address book");		
